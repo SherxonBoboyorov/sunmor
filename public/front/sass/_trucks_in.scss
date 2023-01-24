@@ -1,0 +1,68 @@
+// trucks_in start
+
+.trucks_in{
+    position: relative;
+    margin-bottom: 100px;
+    overflow: hidden;
+
+    &__img{
+        position: relative;
+        @include fiximg(900px,auto,true);
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 50px;
+
+        img{
+            max-height: 680px;
+        }
+
+
+        &::after{
+            content: "";
+            display: block;
+            width: 100000%;
+            height: 50%;
+            background-color:$fon;
+            position: absolute;
+            bottom: 0;
+            right: -1000%;  
+            z-index: -1;        
+        }
+    }
+
+    &__data__h4{
+        padding: 25px 0;
+        @include fontAll(16px,400,$title);
+        line-height: 125%;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        margin-top: -5px;
+    }
+}
+
+// trucks_in end
+
+@media (max-width:1150px){
+    .trucks_in__img{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .trucks_in__img img{
+        max-height: 500px;
+    }
+}
+
+@media (max-width:800px){
+
+    .trucks_in__img img{
+        max-height: 400px;
+    }
+}
+
+@media (max-width:650px){
+    .trucks_in__img img{
+        max-height: 650px;
+    }
+}

@@ -1,0 +1,156 @@
+// contacts start
+
+.contacts{
+    position: relative;
+
+    &__map{
+        max-height: 500px;
+        iframe{
+            width: 100%;
+            height: 500px;
+        }
+    }
+
+    &__menu{
+        display: flex;
+        align-items:flex-start;
+        grid-gap: 30px;
+        flex-direction: column;
+    }
+
+    &__title__h3{
+        @include fontAll(20px,700,$title);
+        line-height: 120%;
+        margin-bottom: 10px;
+    }
+
+    &__link{
+        display: inline-block;
+        @include fontAll(18px,400,$text);
+        line-height: 125%;
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        align-items:start;
+        margin-bottom: 100px;
+        justify-content: space-between;
+    }
+
+    &__form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    &__input{
+        background-color:$fon;
+        height: 50px;
+        width: 100%;
+        border:none;
+        outline: none;
+        @include fontAll(16px,400,$text);
+        line-height: 100%;
+        padding: 12px 20px;
+
+        &::placeholder{
+            @include fontAll(16px,400,$text);
+            line-height: 100%;
+        }
+    }
+
+    &__textarea{
+        resize: none;
+        margin: 20px 0;
+        background-color:$fon;
+        height: 120px;
+        width: 100%;
+        border:none;
+        outline: none;
+        @include fontAll(16px,400,$text);
+        line-height: 100%;
+        padding: 12px 20px;
+
+        &::placeholder{
+            @include fontAll(16px,400,$text);
+            line-height: 100%;
+        }
+    }
+
+    &__button{
+        @include fontAll(12px,700,#fff);
+        line-height: 100%;
+        height: 50px;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        background-color:$title;
+        span{
+            margin-left: 5px;
+        }
+    }
+}
+
+// contacts end
+
+@media (max-width:1150px){
+    .contacts__list{
+        grid-gap: 20px;
+    }
+
+    .contacts__title__h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .contacts__link{
+        font-size: 16px;
+    }
+
+    .contacts__menu{
+        grid-gap: 15px;
+    }
+
+    .contacts__input,
+    .contacts__button{
+        height: 40px;
+    }
+
+    .contacts__textarea{
+        height: 100px;
+    }
+
+    .contacts__form{
+        grid-template-columns: 1fr;
+    }
+
+    .contacts__map iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width:950px){
+    .contacts__list{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:800px){
+    .contacts__map iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width:500px){
+    .contacts__map iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width:400px){
+    .contacts__map iframe {
+        height: 250px;
+    }
+}

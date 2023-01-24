@@ -1,0 +1,135 @@
+// services_in start
+
+.services_in{
+    position: relative;
+    margin-bottom: 100px;
+    overflow: hidden;
+
+    &__img{
+        @include fiximg(100%,600px,true);
+        margin-bottom: 50px;
+        img{
+            max-height: 600px;
+        }
+    }
+
+    &__video{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        position: relative;
+
+        &::after{
+            content: "";
+            display: block;
+            width: 100000%;
+            height: 80%;
+            background-color:$fon;
+            position: absolute;
+            bottom: -80px;
+            right: -1000%;  
+            z-index: -1;        
+        }
+
+        a{
+            @include fiximg(900px,550px,true);
+            display: block;
+            position: relative;
+            margin: 0 auto;
+
+            &::after{
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(0deg, rgba(18, 50, 74, 0.5), rgba(18, 50, 74, 0.5));
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        
+        img{
+            object-position: center;
+        }
+
+        .is-play{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 15px;
+                height: 20px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__link{
+        display: inline-block;
+        align-items:center;
+        background-color:$title;
+        @include fontAll(12px,700,#fff);
+        line-height: 100%;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.06em;
+        height: 100%;
+        padding: 25px 45px;
+        @extend%transition;
+        span{
+            @extend%transition;
+            margin-left: 10px;
+        }
+
+        &:hover{
+            background-color:#2e7ab1;
+        }
+    }
+
+    &__button{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+}
+
+// services_in end
+
+@media (max-width:1150px){
+    .services_in__img,
+    .services_in__video a{
+        height: 500px;
+    }
+
+    .services_in__video a{
+        width: 100%;
+    }
+
+    .services_in__video{
+        margin: 30px 0;
+    }
+
+    .services_in__img{
+        margin-bottom: 30px;
+    }
+
+    .services_in__video::after {
+        bottom: -60px;
+    }
+
+    .services_in__link{
+        padding: 20px 25px;
+    }
+}
+
+@media (max-width:800px){
+    .services_in__img, .services_in__video a {
+        height: 400px;
+    }
+}
+
+@media (max-width:650px){
+    .services_in__img, .services_in__video a {
+        height: auto;
+    }
+}
